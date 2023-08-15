@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Source+Sans+3:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
+#root {
+  font-family: "Space Mono", monospace;
+  background-color: #f2f2f2;
+}
+.navbar {
+  width: 730px;
+  height: 38px;
+}
+.header-color {
+  color: #222731;
+}
+
+.nav-dark-color {
+  color: #697c9a;
+}

@@ -1,10 +1,11 @@
 import "./App.css";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
-    <>
-      <h1 className="text-6xl font-bold underline">Hello world!</h1>
-    </>
+    <div className="w-full h-screen flex flex-col items-center justify-center">
+      <NavBar />
+    </div>
   );
 }
 export default App;
