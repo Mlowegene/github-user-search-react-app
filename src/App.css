@@ -6,6 +6,7 @@
 .navbar {
   width: 730px;
   height: 38px;
+  margin-bottom: 38px;
 }
 .header-color {
   color: #222731;
@@ -13,4 +14,21 @@
 
 .nav-dark-color {
   color: #697c9a;
+}
+.searchbar {
+  background-color: #ffffff;
+  width: 730px;
+  height: 69px;
+}
+.searchbar button {
+  width: 106px;
+  height: 50px;
+  background-color: #0079ff;
+}
+
+.searchbar input {
+  margin-right: 248px;
+}
+.searchbar input::placeholder {
+  color: #4b6a9b;
 }
