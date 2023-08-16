@@ -1,26 +1,44 @@
 import "../App.css";
+import PropTypes from "prop-types";
 import githubImage from "../assets/Bitmap.png";
 import locationIcon from "../assets/icon-location.svg";
 import companyIcon from "../assets/icon-company.svg";
 import twitterIcon from "../assets/icon-twitter.svg";
 import websiteIcon from "../assets/icon-website.svg";
 
-export const UserInfo = () => {
+export const UserInfo = ({ userData }) => {
+  console.log(userData);
+
+  function formatDate(dateString) {
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("fr-FR", options);
+  }
+
   return (
     <div className="userinfo mt-6 flex ">
       <div className="github-icon mt-12 ml-12 mr-9">
-        <img src={githubImage} alt="github-icon" className="rounded-full" />
+        {userData ? (
+          <img
+            src={userData.avatar_url}
+            alt="github-icon"
+            className="rounded-full"
+          />
+        ) : (
+          <img src={githubImage} alt="github-icon" />
+        )}
       </div>
       <div>
         <div className="flex justify-between mr-12 mt-10">
           <div className="">
-            <h3 className="title">The Octocat</h3>
+            <h3 className="title">{userData.name}</h3>
             <p className="text-base font-normal" style={{ color: "#0079FF" }}>
-              @octocat
+              {`@${userData.login}`}
             </p>
           </div>
           <div>
-            <p className="mt-2 dates">Joined 25 Jan 2011</p>
+            <p className="mt-2 dates">{`Joined ${formatDate(
+              userData.created_at
+            )}`}</p>
           </div>
         </div>
         <div className="profile-bio mt-5 mb-8">
@@ -55,9 +73,9 @@ export const UserInfo = () => {
             <img
               src={websiteIcon}
               alt="website icon"
-              className="website-icon mr-4"
+              className="website-icon mr-4 cursor-pointer "
             />
-            https://github.blog
+            {userData.html_url}
           </p>
           <p className="flex">
             <img
@@ -71,4 +89,16 @@ export const UserInfo = () => {
       </div>
     </div>
   );
+};
+
+UserInfo.propTypes = {
+  userData: PropTypes.shape({
+    username: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    login: PropTypes.any,
+    avatar_url: PropTypes.any,
+    created_at: PropTypes.any,
+    html_url: PropTypes.any ,
+    // Define more PropTypes for other user data properties
+  }).isRequired,
 };

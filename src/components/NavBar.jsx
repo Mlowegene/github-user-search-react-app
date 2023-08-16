@@ -6,7 +6,7 @@ export const NavBar = () => {
     <>
       <div className="navbar flex justify-between">
         <h4 className="header-color text-2xl font-bold">devfinder</h4>
-        <p className="flex items-center nav-dark-color">
+        <p className="flex items-center nav-dark-color cursor-pointer">
           DARK
           <span className="pl-3">
             <img src={MoonIcon} alt="moon-icon" />
