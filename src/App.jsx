@@ -28,7 +28,7 @@ function App() {
     <div className="w-full h-screen flex flex-col items-center justify-center">
       <NavBar />
       <SearchBar setUsername={setUsername} fetchUserData={fetchUserData} />
-      {userData && <UserInfo userData={userData} />}
+      <UserInfo userData={userData} />
     </div>
   );
 }
