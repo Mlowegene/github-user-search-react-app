@@ -13,7 +13,6 @@ function App() {
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
-    console.log("clicked");
   };
 
   const fetchUserData = async () => {

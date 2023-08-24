@@ -7,7 +7,6 @@ import twitterIcon from "../assets/icon-twitter.svg";
 import websiteIcon from "../assets/icon-website.svg";
 
 export const UserInfo = ({ userData }) => {
-  console.log(userData);
 
   function formatDate(dateString) {
     const options = { year: "numeric", month: "short", day: "numeric" };
@@ -57,12 +56,7 @@ export const UserInfo = ({ userData }) => {
           </div>
         </div>
         <div className="profile-bio mt-5 mb-8">
-          {userData ? (
-            <p>{userData.bio}</p>
-          ):(
-            <p>This profile has no bio</p>
-          )}
-          
+          {userData ? <p>{userData.bio}</p> : <p>This profile has no bio</p>}
         </div>
         <div className="info grid grid-cols-3 ">
           <p className="header col-span-1 p-2">Repos</p>

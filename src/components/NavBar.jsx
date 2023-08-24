@@ -6,7 +6,6 @@ import { useContext } from "react";
 
 export const NavBar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  console.log(toggleTheme);
 
   return (
     <>
