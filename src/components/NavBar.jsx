@@ -1,10 +1,11 @@
 import "../App.css";
 import MoonIcon from "../assets/icon-moon.svg";
+import SunIcon from "../assets/icon-sun.svg";
 import { ThemeContext } from "../App";
 import { useContext } from "react";
 
 export const NavBar = () => {
-  const { toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   console.log(toggleTheme);
 
   return (
@@ -15,10 +16,22 @@ export const NavBar = () => {
           className="flex items-center nav-dark-color cursor-pointer"
           onClick={toggleTheme}
         >
-          DARK
+          {theme === "dark" ? (
+            <>
+            LIGHT
+            <span className="pl-3">
+              <img src={SunIcon} alt="moon-icon" />
+            </span>
+            </>
+          ): (
+            <>
+            DARK 
           <span className="pl-3">
             <img src={MoonIcon} alt="moon-icon" />
           </span>
+          </>
+          )}
+          
         </button>
       </div>
     </>
