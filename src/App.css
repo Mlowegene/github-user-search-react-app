@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Source+Sans+3:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
 #root {
   font-family: "Space Mono", monospace;
+}
+
+#light {
   background-color: #f2f2f2;
 }
+
+#dark {
+  background: #141d2f;
+}
+
 .navbar {
   width: 730px;
   height: 38px;
@@ -16,29 +24,59 @@
   color: #697c9a;
 }
 .searchbar {
-  background-color: #ffffff;
   width: 730px;
   height: 69px;
 }
+
+#light .searchbar {
+  background-color: #ffffff;
+}
+
+#dark .searchbar {
+  background: #1e2a47;
+}
+
 .searchbar button {
   width: 106px;
   height: 50px;
   background-color: #0079ff;
 }
 
+.searchbar button:hover {
+  background: #60ABFF;
+}
+
 .searchbar input {
   margin-right: 248px;
 }
+
+#dark .searchbar input {
+  background: #1e2a47;
+}
+
 .searchbar input::placeholder {
   color: #4b6a9b;
+}
+
+#dark .searchbar input::placeholder {
+  color: #ffffff;
 }
 
 .userinfo {
   width: 730px;
   height: 419px;
   border-radius: 15px;
+  
+}
+
+#light .userinfo  {
   background: #fefefe;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+}
+
+#dark .userinfo {
+  background: #1E2A47;
+  
 }
 
 .github-icon {
@@ -55,6 +93,10 @@
   line-height: normal;
 }
 
+#dark .title {
+  color: #ffffff;
+}
+
 .dates {
   color: #697c9a;
   text-align: right;
@@ -62,6 +104,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+#dark .dates {
+  color: #ffffff;
 }
 
 .profile-bio {
@@ -72,11 +118,20 @@
   line-height: 25px;
 }
 
+#dark .profile-bio {
+  color: #ffffff;
+}
+
 .info {
   width: 480px;
   height: 85px;
   border-radius: 10px;
   background: #f6f8ff;
+}
+
+#dark .info {
+  background: #141D2F;
+  color: #ffffff;
 }
 
 .info .header {
@@ -85,6 +140,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+#dark .info .header {
+  color: #ffffff;
 }
 
 .location-icon {
@@ -117,4 +176,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+#dark .links {
+  color: #ffffff;
 }

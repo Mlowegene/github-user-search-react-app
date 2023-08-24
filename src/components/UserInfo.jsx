@@ -57,7 +57,12 @@ export const UserInfo = ({ userData }) => {
           </div>
         </div>
         <div className="profile-bio mt-5 mb-8">
-          <p>This profile has no bio</p>
+          {userData ? (
+            <p>{userData.bio}</p>
+          ):(
+            <p>This profile has no bio</p>
+          )}
+          
         </div>
         <div className="info grid grid-cols-3 ">
           <p className="header col-span-1 p-2">Repos</p>
@@ -185,6 +190,7 @@ UserInfo.propTypes = {
     public_repos: PropTypes.int,
     followers: PropTypes.int,
     following: PropTypes.int,
+    bio: PropTypes.any,
 
     // Define more PropTypes for other user data properties
   }),

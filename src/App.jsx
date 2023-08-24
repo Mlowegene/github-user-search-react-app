@@ -2,11 +2,19 @@ import "./App.css";
 import { NavBar } from "./components/NavBar";
 import { SearchBar } from "./components/Searchbar";
 import { UserInfo } from "./components/UserInfo";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
+
+export const ThemeContext = createContext(null);
 
 function App() {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState(null);
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+    console.log("clicked");
+  };
 
   const fetchUserData = async () => {
     try {
@@ -25,11 +33,15 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center">
-      <NavBar />
-      <SearchBar setUsername={setUsername} fetchUserData={fetchUserData} />
-      <UserInfo userData={userData} />
-    </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div id={theme}>
+        <div className="w-full h-screen flex flex-col items-center justify-center">
+          <NavBar />
+          <SearchBar setUsername={setUsername} fetchUserData={fetchUserData} />
+          <UserInfo userData={userData} />
+        </div>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 export default App;
