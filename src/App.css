@@ -43,6 +43,7 @@
 
 #dark .searchbar {
   background: #1e2a47;
+  color: #ffffff;
 }
 
 .searchbar button {
@@ -52,7 +53,7 @@
 }
 
 .searchbar button:hover {
-  background: #60ABFF;
+  background: #60abff;
 }
 
 .searchbar input {
@@ -75,17 +76,15 @@
   width: 730px;
   height: 419px;
   border-radius: 15px;
-  
 }
 
-#light .userinfo  {
+#light .userinfo {
   background: #fefefe;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 #dark .userinfo {
-  background: #1E2A47;
-  
+  background: #1e2a47;
 }
 
 .github-icon {
@@ -139,7 +138,7 @@
 }
 
 #dark .info {
-  background: #141D2F;
+  background: #141d2f;
   color: #ffffff;
 }
 
