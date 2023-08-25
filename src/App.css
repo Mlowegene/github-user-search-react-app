@@ -5,10 +5,12 @@
 
 #light {
   background-color: #f2f2f2;
+  transition: background-color 0.2s ease;
 }
 
 #dark {
   background: #141d2f;
+  transition: background-color 0.2s ease;
 }
 
 .navbar {
