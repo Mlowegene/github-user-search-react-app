@@ -7,7 +7,6 @@ import twitterIcon from "../assets/icon-twitter.svg";
 import websiteIcon from "../assets/icon-website.svg";
 
 export const UserInfo = ({ userData }) => {
-
   function formatDate(dateString) {
     const options = { year: "numeric", month: "short", day: "numeric" };
     return new Date(dateString).toLocaleDateString("fr-FR", options);

@@ -10,6 +10,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState(null);
   const [theme, setTheme] = useState("light");
+  const [userNotFound, setUserNotFound] = useState(false);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -18,10 +19,17 @@ function App() {
   const fetchUserData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
-      const data = await response.json();
-      setUserData(data);
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data);
+      } else {
+        setUserNotFound(true);
+        setUserData(null);
+      }
     } catch (error) {
       console.error("Error fetching user data:", error);
+      setUserNotFound(true);
+      setUserData(null);
     }
   };
 
@@ -36,7 +44,11 @@ function App() {
       <div id={theme}>
         <div className="w-full h-screen flex flex-col items-center justify-center">
           <NavBar />
-          <SearchBar setUsername={setUsername} fetchUserData={fetchUserData} />
+          <SearchBar
+            setUsername={setUsername}
+            fetchUserData={fetchUserData}
+            userNotFound={userNotFound}
+          />
           <UserInfo userData={userData} />
         </div>
       </div>

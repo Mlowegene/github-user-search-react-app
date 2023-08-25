@@ -17,20 +17,19 @@ export const NavBar = () => {
         >
           {theme === "dark" ? (
             <>
-            LIGHT
-            <span className="pl-3">
-              <img src={SunIcon} alt="moon-icon" />
-            </span>
+              LIGHT
+              <span className="pl-3">
+                <img src={SunIcon} alt="moon-icon" />
+              </span>
             </>
-          ): (
+          ) : (
             <>
-            DARK 
-          <span className="pl-3">
-            <img src={MoonIcon} alt="moon-icon" />
-          </span>
-          </>
+              DARK
+              <span className="pl-3">
+                <img src={MoonIcon} alt="moon-icon" />
+              </span>
+            </>
           )}
-          
         </button>
       </div>
     </>
