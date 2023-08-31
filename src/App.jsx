@@ -27,7 +27,6 @@ function App() {
         setUserData(null);
       }
     } catch (error) {
-      console.error("Error fetching user data:", error);
       setUserNotFound(true);
       setUserData(null);
     }
