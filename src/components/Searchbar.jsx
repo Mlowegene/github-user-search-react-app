@@ -18,7 +18,7 @@ export const SearchBar = ({ setUsername, fetchUserData, userNotFound }) => {
       />
       {userNotFound && (
         <p className="text-center text-red-500 ml-32 mr-6 font-bold text-base">
-          No results
+          No results found
         </p>
       )}
       <button
