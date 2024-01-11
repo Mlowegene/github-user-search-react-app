@@ -16,27 +16,27 @@ function App() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch(`https://api.github.com/users/${username}`);
-      if (response.ok) {
-        const data = await response.json();
-        setUserData(data);
-      } else {
-        setUserNotFound(true);
-        setUserData(null);
-      }
-    } catch (error) {
-      setUserNotFound(true);
-      setUserData(null);
-    }
-  };
-
+  
   useEffect(() => {
     if (username) {
-      fetchUserData();
+      const fetchUserData = async () => {
+        try {
+          const response = await fetch(`https://api.github.com/users/${username}`);
+          if (response.ok) {
+            const data = await response.json();
+            setUserData(data);
+          } else {
+            setUserNotFound(true);
+            setUserData(null);
+          }
+        } catch (error) {
+          setUserNotFound(true);
+          setUserData(null);
+        }
+      };
+    fetchUserData();
     }
-  }, []);
+  }, [username]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -45,7 +45,6 @@ function App() {
           <NavBar />
           <SearchBar
             setUsername={setUsername}
-            fetchUserData={fetchUserData}
             userNotFound={userNotFound}
           />
           <UserInfo userData={userData} />
